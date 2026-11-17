@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5fb">
+  <title>Kopfrechentrainer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="animal-background" aria-hidden="true">
+    <span class="animal fox" data-name="Fuchs">🦊</span><span class="animal flamingo" data-name="Flamingo">🦩</span>
+    <span class="animal lynx" data-name="Luchs">🐈</span><span class="animal salamander" data-name="Feuersalamander">🦎</span>
+  </div>
+  <main class="app">
+    <header class="header">
+      <div class="brand-mark" aria-hidden="true">±</div>
+      <div><p class="eyebrow">KLEINE DENKPAUSE?</p><h1>Kopfrechentrainer</h1></div>
+    </header>
+
+    <section class="card settings" aria-labelledby="settings-title">
+      <div class="section-heading"><div><p class="eyebrow">DEIN TRAINING</p><h2 id="settings-title">Stell es dir ein</h2></div><span class="step">01</span></div>
+      <fieldset>
+        <legend>Rechenarten</legend>
+        <div class="operations">
+          <label class="operation"><input type="checkbox" name="operation" value="+" checked><span>+</span><small>Plus</small></label>
+          <label class="operation"><input type="checkbox" name="operation" value="-" checked><span>−</span><small>Minus</small></label>
+          <label class="operation"><input type="checkbox" name="operation" value="*"><span>×</span><small>Mal</small></label>
+          <label class="operation"><input type="checkbox" name="operation" value="/" ><span>÷</span><small>Geteilt</small></label>
+        </div>
+      </fieldset>
+      <div class="range-row">
+        <label for="min-number">Zahlenbereich</label><span class="range-hint">Von–bis</span>
+        <div class="range-inputs"><input id="min-number" type="number" value="1" min="0" max="9999" aria-label="Kleinste Zahl"><span>bis</span><input id="max-number" type="number" value="20" min="0" max="9999" aria-label="Größte Zahl"></div>
+      </div>
+      <button id="start-button" class="primary-button" type="button">Training starten <span aria-hidden="true">→</span></button>
+      <p id="settings-error" class="error" role="alert" hidden></p>
+    </section>
+
+    <section id="training" class="card training" aria-labelledby="question" hidden>
+      <div class="training-top"><span id="progress" class="progress">Aufgabe 1</span><button id="back-button" class="text-button" type="button">Einstellungen</button></div>
+      <p class="eyebrow">WAS IST DAS ERGEBNIS?</p>
+      <h2 id="question" class="question" aria-live="polite">– + –</h2>
+      <form id="answer-form" class="answer-form">
+        <label class="visually-hidden" for="answer">Deine Antwort</label>
+        <input id="answer" type="number" step="any" inputmode="decimal" autocomplete="off" placeholder="Deine Antwort" required>
+        <button class="primary-button" type="submit">Prüfen <span aria-hidden="true">→</span></button>
+      </form>
+      <button id="skip-button" class="skip-button" type="button">Aufgabe überspringen <span aria-hidden="true">↗</span></button>
+      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+      <div class="score"><span>Richtig</span><strong id="score">0</strong></div>
+    </section>
+    <footer>Ein Schritt nach dem anderen. Du schaffst das.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
